@@ -357,6 +357,8 @@
 .cine-flash { position: absolute; inset: 0; background: oklch(0.99 0.01 90); opacity: 0; pointer-events: none; z-index: 5; }
 .cine-hero { position: absolute; inset: 0; display: grid; place-items: center; z-index: 3; padding: 118px 0 44px; overflow: hidden; }
 .cine-hero-inner { width: min(1120px, calc(100% - 40px)); display: grid; justify-items: center; text-align: center; gap: 14px; }
+.cine-reveal { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .cine-reveal { opacity: 1; } }
 .cine-title { font: 800 clamp(2.1rem, 4.6vw, 3.9rem)/1 var(--font-display); letter-spacing: -.05em; margin: 4px 0 0; max-width: 16ch; }
 .cine-copy { color: var(--hero-copy); max-width: 560px; margin: 0; }
 .search-card { width: min(720px, 100%); background: oklch(1 0 0 / 8%); border: 1px solid oklch(1 0 0 / 14%); backdrop-filter: blur(16px); border-radius: 24px; padding: 12px; display: grid; gap: 10px; }
