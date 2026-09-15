@@ -331,15 +331,18 @@
   overflow: hidden;
 }
 .shutter-stage {
-  position: relative;
-  width: min(120vmax, 2200px);
-  height: min(120vmax, 2200px);
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
 }
 .shutter-blade {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  width: 220vmax;
+  height: 220vmax;
+  translate: -50% -50%;
   transform-origin: 50% 50%;
   background: linear-gradient(140deg, oklch(0.2 0.02 60) 0%, oklch(0.13 0.015 60) 100%);
   clip-path: polygon(50% 50%, 100% 22%, 100% 78%);
