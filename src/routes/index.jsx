@@ -366,7 +366,7 @@ function GetSnapHome() {
           <span className="events-transition-top" aria-hidden="true" />
           <div className="section-head"><div><div className="kicker events-kicker">Fresh from the finish line</div><h2 className="events-title">Recent events</h2></div><p className="events-copy">Real moments from events across the country, ready to find, buy, and keep.</p></div>
           <div className="filters" role="group" aria-label="Filter events">
-            {filters.map((label) => <Button key={label} variant="outline" className={`filter ${filter === label.toLowerCase().replace(" events", "") ? "active" : ""}`} onClick={() => applyFilter(label.toLowerCase().replace(" events", ""))}>{label}</Button>)}
+            {filters.map((label) => <Button key={label} variant="outline" className={`filter ${filter === label.toLowerCase().replace(" events", "") ? "active bg-ink text-primary-foreground border-ink hover:bg-ink" : ""}`} onClick={() => applyFilter(label.toLowerCase().replace(" events", ""))}>{label}</Button>)}
           </div>
           <div className="event-grid" id="eventGrid">
             {visibleEvents.map((event) => (
