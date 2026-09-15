@@ -221,9 +221,9 @@
   .bib-entry .bib-submit { width: 39px; height: 39px; padding: 0; border-radius: 10px; }
   .content-section { padding: 82px 0; }
   .events-section { position: relative; isolation: isolate; }
-  .events-section::before, .events-section::after { content: ""; position: absolute; z-index: -1; left: 50%; width: 100vw; transform: translateX(-50%) scaleY(.75); opacity: 0; pointer-events: none; }
-  .events-section::before { top: 0; height: 110px; background: linear-gradient(180deg, var(--wash), transparent); transform-origin: top; }
-  .events-section::after { bottom: 0; height: 130px; background: linear-gradient(0deg, var(--wash), transparent); transform-origin: bottom; }
+  .events-transition-top, .events-transition-bottom { position: absolute; z-index: -1; left: 50%; width: 100vw; transform: translateX(-50%) scaleY(.75); opacity: 0; pointer-events: none; }
+  .events-transition-top { top: 0; height: 110px; background: linear-gradient(180deg, var(--wash), transparent); transform-origin: top; }
+  .events-transition-bottom { bottom: 0; height: 130px; background: linear-gradient(0deg, var(--wash), transparent); transform-origin: bottom; }
   .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 28px; }
   .kicker { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--primary); font-weight: 800; }
   .section-head h2, .process-copy h2 { font: 800 clamp(2rem, 4vw, 3.2rem)/1.05 var(--font-display); letter-spacing: -.04em; margin: 8px 0 0; }
