@@ -242,6 +242,8 @@
   .event-body { padding: 20px; }
   .event h3 { font: 700 1.15rem var(--font-display); margin: 0 0 12px; }
   .meta { display: flex; gap: 14px; color: var(--muted-foreground); font-size: .85rem; flex-wrap: wrap; }
+  .meta span { display: inline-flex; align-items: center; gap: 5px; }
+  .meta svg { width: 13px; height: 13px; }
   .event-foot { border-top: 1px solid var(--border); margin-top: 17px; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
   .event-foot span:first-child { color: var(--primary); }
   .view-photos { transition: color .2s ease, transform .2s ease; }

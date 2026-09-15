@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Camera, Hash, Menu, Search, Smile, Upload, X } from "lucide-react";
+import { CalendarDays, Camera, Hash, MapPin, Menu, Search, Smile, Upload, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -148,7 +148,7 @@ function GetSnapHome() {
       <header className="shell nav">
         <a className="brand" href="#top"><img src={images.logo} alt="GetSnap logo" /><span>getsnap.ph</span></a>
         <nav className="links" aria-label="Main navigation"><a href="#events">Events</a><a href="#how">How it works</a><a href="#photographers">For photographers</a></nav>
-        <div className="nav-actions"><Button variant="ghost" className="pill-btn">Log in</Button><Button className="pill-btn bg-ink text-primary-foreground hover:bg-ink/90">Create account</Button><Button variant="secondary" size="icon" className="menu-btn" aria-label="Open menu"><Menu /></Button></div>
+        <div className="nav-actions"><Button variant="ghost" className="pill-btn">Log in</Button><Button className="pill-btn bg-ink text-primary-foreground hover:bg-ink/90">Create account</Button><Button variant="secondary" size="icon" className="menu-btn md:hidden" aria-label="Open menu"><Menu /></Button></div>
       </header>
 
       <main id="top">
@@ -176,13 +176,13 @@ function GetSnapHome() {
           <span className="events-transition-top" aria-hidden="true" />
           <div className="section-head"><div><div className="kicker events-kicker">Fresh from the finish line</div><h2 className="events-title">Recent events</h2></div><p className="events-copy">Real moments from events across the country, ready to find, buy, and keep.</p></div>
           <div className="filters" role="group" aria-label="Filter events">
-            {filters.map((label) => <Button key={label} variant="outline" className={`filter ${filter === label.toLowerCase().replace(" events", "") ? "active" : ""}`} onClick={() => applyFilter(label.toLowerCase().replace(" events", ""))}>{label}</Button>)}
+            {filters.map((label) => <Button key={label} variant="outline" className={`filter ${filter === label.toLowerCase().replace(" events", "") ? "active bg-ink text-primary-foreground border-ink" : ""}`} onClick={() => applyFilter(label.toLowerCase().replace(" events", ""))}>{label}</Button>)}
           </div>
           <div className="event-grid" id="eventGrid">
             {visibleEvents.map((event) => (
               <article className="event" key={event.name} tabIndex={0} role="button" onClick={() => notify(`Opening ${event.name} gallery…`)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") notify(`Opening ${event.name} gallery…`); }}>
                 <div className="event-media"><img src={event.image} alt={event.alt} loading="lazy" />{event.badge && <span className="badge">{event.badge}</span>}</div>
-                <div className="event-body"><h3>{event.name}</h3><div className="meta"><span>▣ {event.date}</span><span>⌖ {event.location}</span></div><div className="event-foot"><span>{event.photos}</span><span className="view-photos">View photos →</span></div></div>
+                <div className="event-body"><h3>{event.name}</h3><div className="meta"><span><CalendarDays />{event.date}</span><span><MapPin />{event.location}</span></div><div className="event-foot"><span>{event.photos}</span><span className="view-photos">View photos →</span></div></div>
               </article>
             ))}
           </div>
