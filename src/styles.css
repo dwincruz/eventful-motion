@@ -319,3 +319,57 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* ---- Camera shutter intro ---- */
+.shutter-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 50%, oklch(0.24 0.02 60) 0%, oklch(0.12 0.015 60) 60%, oklch(0.08 0.01 60) 100%);
+  overflow: hidden;
+}
+.shutter-stage {
+  position: relative;
+  width: min(120vmax, 2200px);
+  height: min(120vmax, 2200px);
+  display: grid;
+  place-items: center;
+}
+.shutter-blade {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  background: linear-gradient(140deg, oklch(0.2 0.02 60) 0%, oklch(0.13 0.015 60) 100%);
+  clip-path: polygon(50% 50%, 100% 22%, 100% 78%);
+  will-change: transform, opacity;
+}
+.shutter-ring {
+  position: relative;
+  width: min(42vmin, 320px);
+  height: min(42vmin, 320px);
+  border-radius: 50%;
+  border: 2px solid color-mix(in oklch, var(--color-primary) 70%, transparent);
+  box-shadow: 0 0 0 14px color-mix(in oklch, var(--color-primary) 8%, transparent), inset 0 0 60px color-mix(in oklch, var(--color-primary) 16%, transparent);
+  will-change: transform, opacity;
+}
+.shutter-word {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: lowercase;
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  color: oklch(0.97 0.01 60);
+}
+.shutter-flash {
+  position: absolute;
+  inset: 0;
+  background: oklch(0.99 0.02 70);
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shutter-intro { display: none !important; }
+}

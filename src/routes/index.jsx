@@ -3,6 +3,7 @@ import { CalendarDays, Camera, Hash, MapPin, Menu, Search, Smile, Upload, X } fr
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import ShutterIntro from "@/components/ShutterIntro";
 import logoAsset from "@/assets/getsnap-logo.png.asset.json";
 import runAsset from "@/assets/run.webp.asset.json";
 import triathlonAsset from "@/assets/triathlon.webp.asset.json";
@@ -145,6 +146,7 @@ function GetSnapHome() {
 
   return (
     <div className="getsnap-page">
+      <ShutterIntro />
       <header className="shell nav">
         <a className="brand" href="#top"><img src={images.logo} alt="GetSnap logo" /><span>getsnap.ph</span></a>
         <nav className="links" aria-label="Main navigation"><a href="#events">Events</a><a href="#how">How it works</a><a href="#photographers">For photographers</a></nav>
