@@ -56,7 +56,7 @@ export default function ShutterIntro() {
     <div className="shutter-intro" ref={rootRef} aria-hidden="true">
       <div className="shutter-stage">
         {BLADES.map((angle) => (
-          <span key={angle} className="shutter-blade" style={{ transform: `rotate(${angle}deg)` }} />
+          <span key={angle} className="shutter-blade" style={{ rotate: `${angle}deg` }} />
         ))}
         <span className="shutter-ring" />
         <span className="shutter-word">getsnap.ph</span>
