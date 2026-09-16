@@ -347,11 +347,13 @@
 /* Pinned intro */
 .cine-wrap { position: relative; }
 .cine-stage { position: relative; height: 100svh; min-height: 620px; overflow: hidden; background: radial-gradient(circle at 50% 42%, oklch(0.24 0.05 265) 0%, var(--navy) 45%, var(--navy-deep) 100%); color: oklch(0.99 0 0); }
-.camera-scene { position: absolute; inset: 0; display: grid; place-items: center; will-change: transform, opacity; z-index: 2; }
-.camera-body { position: relative; width: min(62vmin, 520px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: oklch(0.1 0.01 265); box-shadow: 0 0 0 8px oklch(0.28 0.01 265), 0 0 0 14px oklch(0.16 0.01 265), 0 0 0 20px oklch(0.34 0.012 265 / 70%), 0 40px 120px oklch(0 0 0 / 70%); overflow: hidden; }
-.camera-lens { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.camera-bezel { position: absolute; inset: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 32% 24%, oklch(1 0 0 / 16%), transparent 42%); box-shadow: inset 0 0 60px oklch(0 0 0 / 80%), inset 0 0 0 2px oklch(0.75 0.02 265 / 28%); }
-.iris { position: absolute; width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 0 100vmax oklch(0.08 0.02 265), inset 0 0 26px oklch(0 0 0 / 85%); transform: scale(0); will-change: transform; }
+.camera-scene { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 22px; will-change: transform, opacity; z-index: 2; }
+.brand-mark { position: relative; display: grid; place-items: center; width: min(46vmin, 320px); aspect-ratio: 1; }
+.brand-glow { position: absolute; inset: -12%; border-radius: 50%; background: radial-gradient(circle, oklch(0.72 0.19 45 / 34%) 0%, transparent 62%); opacity: 0; will-change: transform, opacity; }
+.brand-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid oklch(0.85 0.09 70 / 45%); opacity: 0; will-change: transform, opacity; }
+.brand-ring.two { inset: 12%; border-color: oklch(0.72 0.19 45 / 40%); }
+.brand-logo { position: relative; width: 74%; height: auto; object-fit: contain; will-change: transform, opacity; filter: drop-shadow(0 18px 46px oklch(0 0 0 / 55%)); }
+.brand-tagline { font: 600 .82rem/1.4 var(--font-sans); letter-spacing: .26em; text-transform: uppercase; color: oklch(0.95 0.01 265 / 74%); opacity: 0; text-align: center; padding: 0 20px; }
 .scroll-hint { position: absolute; bottom: 7vh; left: 50%; translate: -50% 0; display: grid; justify-items: center; gap: 12px; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: oklch(0.95 0.01 265 / 72%); z-index: 4; }
 .scroll-hint-line { width: 1px; height: 46px; background: linear-gradient(180deg, var(--gold), transparent); }
 .cine-flash { position: absolute; inset: 0; background: oklch(0.99 0.01 90); opacity: 0; pointer-events: none; z-index: 5; }
@@ -424,7 +426,7 @@ main section[id] { scroll-margin-top: 92px; }
 
 @media (max-width: 620px) {
   .cine-stage { min-height: 560px; }
-  .camera-body { width: min(72vmin, 360px); }
+  .brand-mark { width: min(58vmin, 250px); }
   .collage-tile { height: 92px; }
   .stat-row { gap: 20px; }
   .stat b { font-size: 1.45rem; }
@@ -433,6 +435,6 @@ main section[id] { scroll-margin-top: 92px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .iris { transform: scale(.46); }
+  .brand-glow, .brand-ring, .brand-tagline { opacity: 1; }
   .scroll-progress { display: none; }
 }
