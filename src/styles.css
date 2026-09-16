@@ -334,7 +334,7 @@
 
 /* Navigation */
 .nav-bar { position: fixed; top: 3px; left: 0; right: 0; z-index: 110; background: transparent; color: oklch(0.99 0 0); transition: background-color .5s ease, color .5s ease, box-shadow .5s ease, backdrop-filter .5s ease; }
-.nav-bar .links { color: oklch(0.95 0.01 265 / 82%); }
+.nav-bar .links { color: oklch(0.96 0.02 70 / 85%); }
 .nav-bar .brand span { color: oklch(0.99 0 0); }
 .nav-bar .nav-ghost { color: inherit; }
 .nav-bar .nav-cta { background: var(--primary); color: oklch(0.99 0 0); }
