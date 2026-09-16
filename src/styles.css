@@ -346,7 +346,7 @@
 
 /* Pinned intro */
 .cine-wrap { position: relative; }
-.cine-stage { position: relative; height: 100svh; min-height: 620px; overflow: hidden; background: radial-gradient(circle at 50% 42%, oklch(0.24 0.05 265) 0%, var(--navy) 45%, var(--navy-deep) 100%); color: oklch(0.99 0 0); }
+.cine-stage { position: relative; height: 100svh; min-height: 620px; overflow: hidden; background: radial-gradient(circle at 50% 42%, oklch(0.24 0.06 44) 0%, var(--navy) 45%, var(--navy-deep) 100%); color: oklch(0.99 0 0); }
 .camera-scene { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 22px; will-change: transform, opacity; z-index: 2; }
 .brand-mark { position: relative; display: grid; place-items: center; width: min(46vmin, 320px); aspect-ratio: 1; }
 .brand-glow { position: absolute; inset: -12%; border-radius: 50%; background: radial-gradient(circle, oklch(0.72 0.19 45 / 34%) 0%, transparent 62%); opacity: 0; will-change: transform, opacity; }
