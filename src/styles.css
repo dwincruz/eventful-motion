@@ -329,7 +329,7 @@
 }
 
 /* Scroll progress */
-.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 120; background: oklch(0.5 0.02 265 / 12%); }
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 120; background: oklch(0.5 0.02 40 / 14%); }
 .scroll-progress-bar { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: left center; background: linear-gradient(90deg, var(--primary), var(--gold) 55%, var(--teal)); }
 
 /* Navigation */
