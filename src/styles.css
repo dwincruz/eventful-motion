@@ -426,7 +426,7 @@ main section[id] { scroll-margin-top: 92px; }
 
 @media (max-width: 620px) {
   .cine-stage { min-height: 560px; }
-  .camera-body { width: min(72vmin, 360px); }
+  .brand-mark { width: min(58vmin, 250px); }
   .collage-tile { height: 92px; }
   .stat-row { gap: 20px; }
   .stat b { font-size: 1.45rem; }
@@ -435,6 +435,6 @@ main section[id] { scroll-margin-top: 92px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .iris { transform: scale(.46); }
+  .brand-glow, .brand-ring, .brand-tagline { opacity: 1; }
   .scroll-progress { display: none; }
 }
