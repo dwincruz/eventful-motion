@@ -107,6 +107,20 @@ export default function CameraIntro({ children, onProgress }) {
                 { scale: mobile ? 1.6 : 2.2, opacity: 0, duration: 0.62 },
                 0,
               )
+              .to(
+                ".brand-mark",
+                {
+                  rotation: mobile ? 60 : 110,
+                  duration: 0.62,
+                  ease: "sine.inOut",
+                },
+                0,
+              )
+              .to(
+                ".brand-ring",
+                { rotation: mobile ? -50 : -85, duration: 0.62, ease: "sine.inOut" },
+                0,
+              )
               .fromTo(
                 ".cine-reveal",
                 { y: mobile ? 26 : 52, opacity: 0 },
