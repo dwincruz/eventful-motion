@@ -254,7 +254,7 @@ function GetSnapHome() {
               scrollTrigger: {
                 trigger: ".events-collage-stage",
                 start: "top top+=88",
-                end: "+=135%",
+                end: "+=1100",
                 pin: true,
                 pinSpacing: true,
                 scrub: 1.15,
@@ -277,7 +277,7 @@ function GetSnapHome() {
                 scale: 1,
                 opacity: 1,
                 duration: .72,
-                ease: "power2.inOut",
+                ease: "none",
               }, index * .035);
             });
             gather
