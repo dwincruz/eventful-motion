@@ -5,4 +5,4 @@
 - [x] Enhance only the Recent events section with GSAP and ScrollTrigger.
 - [x] Validate desktop, mobile, reduced-motion, and existing interactions.
 - [x] Add a this.design-inspired image-gathering collage to Recent events.
-- [ ] Validate the collage sequence on desktop and mobile.
+- [x] Validate the collage sequence on desktop and mobile.
