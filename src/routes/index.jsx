@@ -221,12 +221,13 @@ function GetSnapHome() {
       context = gsap.context(() => {
         media = gsap.matchMedia();
         media.add({ desktop: "(min-width: 769px) and (prefers-reduced-motion: no-preference)", mobile: "(max-width: 768px) and (prefers-reduced-motion: no-preference)", reduce: "(prefers-reduced-motion: reduce)" }, (match) => {
-          const { mobile, reduce } = match.conditions;
+          const { desktop, mobile, reduce } = match.conditions;
           const cards = gsap.utils.toArray(".event");
           const cardImages = gsap.utils.toArray(".event-media img");
+          const collageTiles = gsap.utils.toArray(".events-collage-tile");
 
           if (reduce) {
-            gsap.set([".events-kicker", ".events-title", ".events-copy", ".filter", cards], { clearProps: "all", opacity: 1 });
+            gsap.set([".events-kicker", ".events-title", ".events-copy", ".filter", cards, collageTiles], { clearProps: "all", opacity: 1 });
             return;
           }
 
@@ -239,6 +240,63 @@ function GetSnapHome() {
             .from(".events-title", { y: mobile ? 20 : 32, opacity: 0, duration: .9 }, "-=.44")
             .from(".events-copy", { y: mobile ? 12 : 22, opacity: 0, duration: .72 }, "-=.5")
             .from(".filter", { y: mobile ? 10 : 16, opacity: 0, stagger: .07, duration: .55 }, "-=.42");
+
+          if (desktop && collageTiles.length) {
+            const scatter = [
+              { x: -58, y: -32, rotation: -12 },
+              { x: 8, y: -55, rotation: 8 },
+              { x: 62, y: -25, rotation: 13 },
+              { x: -64, y: 38, rotation: 9 },
+              { x: -4, y: 57, rotation: -7 },
+              { x: 59, y: 35, rotation: -11 },
+            ];
+            const gather = gsap.timeline({
+              scrollTrigger: {
+                trigger: ".events-collage-stage",
+                start: "top top+=88",
+                end: "+=135%",
+                pin: true,
+                pinSpacing: true,
+                scrub: 1.15,
+                invalidateOnRefresh: true,
+              },
+            });
+
+            collageTiles.forEach((tile, index) => {
+              const origin = scatter[index] ?? scatter[index % scatter.length];
+              gather.fromTo(tile, {
+                xPercent: origin.x,
+                yPercent: origin.y,
+                rotation: origin.rotation,
+                scale: .7,
+                opacity: .12,
+              }, {
+                xPercent: 0,
+                yPercent: 0,
+                rotation: 0,
+                scale: 1,
+                opacity: 1,
+                duration: .72,
+                ease: "power2.inOut",
+              }, index * .035);
+            });
+            gather
+              .fromTo(".events-collage-caption", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .28, ease: "sine.out" }, .57)
+              .to(".events-collage", { scale: .975, opacity: .86, duration: .2, ease: "sine.inOut" }, .8);
+          } else if (mobile && collageTiles.length) {
+            gsap.fromTo(collageTiles, {
+              y: 42,
+              scale: .92,
+              opacity: .35,
+            }, {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              stagger: .06,
+              ease: "sine.out",
+              scrollTrigger: { trigger: ".events-collage-stage", start: "top 88%", end: "bottom 62%", scrub: .65 },
+            });
+          }
 
           gsap.from(cards, {
             y: mobile ? 24 : 46,
@@ -367,6 +425,16 @@ function GetSnapHome() {
           <div className="section-head"><div><div className="kicker events-kicker">Fresh from the finish line</div><h2 className="events-title">Recent events</h2></div><p className="events-copy">Real moments from events across the country, ready to find, buy, and keep.</p></div>
           <div className="filters" role="group" aria-label="Filter events">
             {filters.map((label) => <Button key={label} variant="outline" className={`filter ${filter === label.toLowerCase().replace(" events", "") ? "active bg-ink text-primary-foreground border-ink hover:bg-ink" : ""}`} onClick={() => applyFilter(label.toLowerCase().replace(" events", ""))}>{label}</Button>)}
+          </div>
+          <div className="events-collage-stage" aria-hidden="true">
+            <div className="events-collage">
+              {visibleEvents.map((event, index) => (
+                <figure className={`events-collage-tile tile-${index + 1}`} key={`collage-${event.name}`}>
+                  <img src={event.image} alt="" loading="eager" />
+                </figure>
+              ))}
+              <div className="events-collage-caption"><span>Moments, gathered.</span><b>Find yours below</b></div>
+            </div>
           </div>
           <div className="event-grid" id="eventGrid">
             {visibleEvents.map((event) => (
