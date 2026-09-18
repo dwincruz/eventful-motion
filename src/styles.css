@@ -232,19 +232,6 @@
   .filter { border: 1px solid var(--border); background: var(--background); color: var(--foreground); border-radius: 999px; padding: 10px 16px; height: auto; white-space: nowrap; font-weight: 600; box-shadow: 0 0 0 transparent; transition: transform .22s cubic-bezier(.2,.8,.2,1), background-color .22s ease, color .22s ease, box-shadow .22s ease, border-color .22s ease; }
   .filter.active, .filter:hover { background: var(--ink); border-color: var(--ink); color: var(--primary-foreground); }
   .filter:hover { transform: translateY(-2px) scale(1.018); box-shadow: 0 8px 18px oklch(0.19 0.019 275 / 12%); }
-  .events-collage-stage { position: relative; height: min(76vh, 760px); min-height: 560px; display: grid; place-items: center; overflow: hidden; margin: 0 calc(50% - 50vw) 42px; }
-  .events-collage { position: relative; width: min(1060px, calc(100vw - 48px)); height: min(68vh, 650px); perspective: 1200px; will-change: transform, opacity; }
-  .events-collage-tile { position: absolute; margin: 0; overflow: hidden; border: 5px solid var(--background); border-radius: 6px; background: var(--muted); box-shadow: 0 24px 70px oklch(0.16 0.025 40 / 24%); will-change: transform, opacity; }
-  .events-collage-tile img { width: 100%; height: 100%; object-fit: cover; }
-  .events-collage-tile.tile-1 { left: 2%; top: 10%; width: 31%; height: 43%; z-index: 2; }
-  .events-collage-tile.tile-2 { left: 34%; top: 3%; width: 32%; height: 51%; z-index: 4; }
-  .events-collage-tile.tile-3 { right: 1%; top: 13%; width: 31%; height: 40%; z-index: 2; }
-  .events-collage-tile.tile-4 { left: 8%; bottom: 3%; width: 30%; height: 39%; z-index: 3; }
-  .events-collage-tile.tile-5 { left: 39%; bottom: 0; width: 28%; height: 42%; z-index: 5; }
-  .events-collage-tile.tile-6 { right: 5%; bottom: 5%; width: 29%; height: 38%; z-index: 3; }
-  .events-collage-caption { position: absolute; left: 50%; top: 50%; z-index: 8; translate: -50% -50%; display: grid; justify-items: center; min-width: 235px; padding: 17px 24px; background: color-mix(in oklch, var(--ink) 91%, transparent); color: var(--primary-foreground); border: 1px solid oklch(1 0 0 / 16%); box-shadow: 0 16px 45px oklch(0.1 0.02 40 / 28%); text-align: center; }
-  .events-collage-caption span { color: var(--gold); font: 700 .74rem var(--font-sans); letter-spacing: .12em; text-transform: uppercase; }
-  .events-collage-caption b { margin-top: 3px; font: 800 1.35rem var(--font-display); }
   .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .event { border: 1px solid var(--border); border-radius: 24px; overflow: hidden; background: var(--background); cursor: pointer; transform-origin: center center; transition: box-shadow .3s ease; will-change: transform, opacity; }
   .event:hover { box-shadow: var(--shadow-event); }
@@ -304,8 +291,6 @@
   .hero-inner { padding: 54px 36px; }
   .quick-find, .process-grid { grid-template-columns: 1fr; }
   .event-grid { grid-template-columns: repeat(2, 1fr); }
-  .events-collage-stage { height: 520px; min-height: 0; margin-bottom: 26px; }
-  .events-collage { width: calc(100vw - 28px); height: 470px; }
 }
 
 @media (max-width: 620px) {
@@ -324,17 +309,6 @@
   .content-section { padding: 62px 0; }
   .section-head { align-items: flex-start; flex-direction: column; }
   .event-grid { grid-template-columns: 1fr; }
-  .events-collage-stage { height: 390px; margin-top: 4px; }
-  .events-collage { height: 350px; }
-  .events-collage-tile { border-width: 3px; }
-  .events-collage-tile.tile-1 { left: 1%; top: 7%; width: 38%; height: 39%; }
-  .events-collage-tile.tile-2 { left: 31%; top: 1%; width: 38%; height: 46%; }
-  .events-collage-tile.tile-3 { right: 1%; top: 9%; width: 35%; height: 37%; }
-  .events-collage-tile.tile-4 { left: 3%; bottom: 7%; width: 37%; height: 39%; }
-  .events-collage-tile.tile-5 { left: 32%; bottom: 1%; width: 38%; height: 45%; }
-  .events-collage-tile.tile-6 { right: 1%; bottom: 8%; width: 35%; height: 37%; }
-  .events-collage-caption { min-width: 190px; padding: 13px 18px; }
-  .events-collage-caption b { font-size: 1.08rem; }
   .process-grid { gap: 38px; }
   .process-visual { min-height: 410px; }
   .photog-card { padding: 34px 24px; }
@@ -344,7 +318,6 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .events-collage-stage { display: none; }
 }
 
 /* ================= Cinematic landing ================= */
