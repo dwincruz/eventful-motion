@@ -8,4 +8,4 @@
 - [x] Validate the collage sequence on desktop and mobile.
 - [x] Restore the previous Event categories presentation.
 - [x] Replace the pinned Events collage with the supplied directional gallery animation.
-- [ ] Validate the revised Events animation on desktop and mobile.
+- [x] Validate the revised Events animation on desktop and mobile.
