@@ -6,3 +6,6 @@
 - [x] Validate desktop, mobile, reduced-motion, and existing interactions.
 - [x] Add a this.design-inspired image-gathering collage to Recent events.
 - [x] Validate the collage sequence on desktop and mobile.
+- [ ] Restore the previous Event categories presentation.
+- [ ] Replace the pinned Events collage with the supplied directional gallery animation.
+- [ ] Validate the revised Events animation on desktop and mobile.
